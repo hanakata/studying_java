@@ -11,7 +11,7 @@ class Car {
     public void setCar(int n, double g) {
         num = n;
         gas = g;
-        System.out.println("Setting:" + num + " " + gas);
+        System.out.println("Set " + num + " " + gas);
     }
 
     public void show() {
@@ -20,16 +20,18 @@ class Car {
     }
 }
 
-class Sample6 {
+class Sample7 {
     public static void main(String[] args) {
         Car car1;
-        System.out.println("car1 call");
         car1 = new Car();
         car1.setCar(1234, 20.5);
+
         Car car2;
-        System.out.println("car2 call");
         car2 = car1;
-        System.out.println("Car2 car1");
+        car1.show();
+        car2.show();
+
+        car1.setCar(2345, 30.5);
         car1.show();
         car2.show();
     }
