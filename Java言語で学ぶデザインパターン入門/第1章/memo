@@ -33,3 +33,45 @@ BookShelfクラスは本棚を表現しているクラス。
 ソース中のimplement Aggregateという部分がAggregateインターフェイスを実装している。
 この本棚はbooksというフィールドを持つ。
 このフィールドはbookの配列。大きさは最初にBoolShelfのインスタンスを作るときに指定。
+booksフィールドをprivateにしているのはクラス外からの不用意な変更を防ぐため。
+
+BookShelfIteratorをIteratorとして扱うためIteratorインターフェースを実装している（BookShelfIterator.java)
+bookShelfフィールドはこのBookShelfIteratorがスキャンする本棚。
+indexフィールドが現在注目している本を指す添え字。
+コンストラクタでは渡されたBookshelfのインスタンスをbookShelfフィールドに
+保存しindexを0にする。
+hasNextメソッドはIteratorインターフェースで宣言されているメソッドを実装したもの。
+nextメソッドは現在注目している本を返しさらに次へすすめるためのメソッド。
+
+Mainではまず本が4冊入る本棚を作成し順番に4冊の本を入れる。
+bookShelf.Iteratorによって得られるitが本棚をスキャンするためのIteratorのインスタンス。
+while部分の条件に書くのはit.hasNext()
+
+Iteratorパターンの登場人物は以下
+・Iteratorの役
+　要素を順場にスキャンしていくインターフェースを定める役。
+　サンプルプログラムではIteratorインターフェース。
+・ConcreteIteratorの役
+　Iterator役が定めたインターフェースを実際に実装する役。
+　サンプルプログラムではBookshelfIteratorクラス。
+・Aggregateの役
+　Iterator役を作り出すインターフェースを定める役。
+　サンプルプログラムではAggregateインターフェース。
+・ConcreteAggregateの役
+　Aggregateの役が定めたインターフェースを実際に実装する役。
+　サンプルプログラムではBookshelfクラス。
+
+なぜIteratorパターンのような面倒なものを用意するのか？
+→Iteratorを使うことで実装とは切り離して数え上げを行うことが出来るから。
+例えばサンプルプログラムのMainで使っているwhileの場合hasNextとnextというIteratorメソッドだけ使っている。
+こうすればBookShelfの実装に依存しないことになる。
+つまりBookShelfがどんな実装になろうとIteratorメソッドを持っていて正しく返してくれれば実装を触る必要がない。
+
+具体的なクラスだけを使うとクラス間の結合が強くなってしまい部品として再利用できなくなる。
+なので具体的なクラスだけでプログラミングするのではなく抽象クラスやインターフェースを使ってプログラムを作るという考え方を
+頭の片隅にでも必ず置くこと。
+
+AggregateとIteratorの2つのインターフェースは対になっている。
+なので片方が変わってしまった場合はもう片方も変更が必須（ここは強い結びつき）
+
+次とか最後とかいうメソッドは間違えやすいので気を付けること。
