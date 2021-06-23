@@ -23,3 +23,13 @@ PageクラスはHTMLページ全体を抽象的に表現したクラス。
 今までのクラスを部品としたらこのクラスは製品となる。
 
 ・抽象的な工場：Factoryクラス
+
+・具体的な工場：ListFactoryクラス
+ListFactoryクラスではFactoryクラスの抽象メソッドを実装している。
+
+・具体的な部品：ListLinkクラス
+ListLinkクラスはLinkクラスのサブクラス。
+
+・具体的な部品：ListTrayクラス
+Trayクラスのサブクラス
+
