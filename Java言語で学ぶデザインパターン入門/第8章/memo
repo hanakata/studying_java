@@ -33,3 +33,14 @@ ListLinkクラスはLinkクラスのサブクラス。
 ・具体的な部品：ListTrayクラス
 Trayクラスのサブクラス
 
+AbstractFactoryパターンの登場人物
+・AbstractProductの役
+AbstractFactory役によって作り出される抽象的な部品や製品のインターフェイス
+・AbstractFactoryの役
+AbstractProduct役のインスタンスを作り出すためのインターフェース
+・Clientの役
+AbstractFactory役とAbstractProduct役のインターフェースだけを使って仕事を行う役。
+・ConcreteProductの役
+AbstractProduct役のインターフェースを実装
+・ConcreteFactoryの役
+AbstractFactory役のインターフェースを実装
