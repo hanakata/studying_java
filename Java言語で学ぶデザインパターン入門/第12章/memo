@@ -1,0 +1,29 @@
+第12章 飾り枠と中身の同一視
+
+Dcoratorパターン
+まず中心となるおぶひぇくとがある。
+それに飾り付けとなる機能をかぶせてより目的にあったオブジェクトに仕上げる。
+こういったデザインパターンをDecoratorパターンと呼ぶ。
+
+サンプルプログラム
+・Displayクラス
+　複数行からなる文字列を表示するための抽象クラス。
+・StringDisplayクラス
+　StringDisplayクラスは1行の文字列を表示するクラス。
+　Displayクラスのサブクラス。
+・Borderクラス
+　Borderクラスは飾り枠を表す抽象クラス。
+・SideBorderクラス
+　具体的な飾り枠の一種でBorderクラスのサブクラス。
+・FullBorderクラス
+　SideBorderクラスと同様Borderのサブクラスの1つ。
+
+Decoratorパターンの登場人物
+・Component役
+　機能を追加するときの核になる役。
+・ConcreateComponent役
+　Component役のインタフェース。
+・Decorator役
+　Component役と同じインターフェース。
+・ConcreateDecorator役
+　具体的なDecorator役。
