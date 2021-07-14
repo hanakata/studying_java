@@ -6,3 +6,16 @@ Meditorパターン
 これをMeditorパターンと呼ぶ
 
 サンプルプログラム
+Mediatorインターフェース
+相談役を表現するインターフェース。
+Colleagueインターフェース
+相談役に相談を持ちかけるメンバーを表すインターフェース。
+ColleagueButtonクラス
+java.awt.Buttonのサブクラスとして作成するが、Colleagueインターフェースを
+実装してLoginFrameクラスと協調動作を行う
+ColleagueTextFieldクラス
+java.awt.TextFieldのサブクラスでColleagueインターフェースを実装。
+ColleagueCheckBoxクラス
+java.awt.checkboxクラスのサブクラス
+LoginFrameクラス
+java.awt.FrameのサブクラスでMediatorインターフェイスを実装している。
